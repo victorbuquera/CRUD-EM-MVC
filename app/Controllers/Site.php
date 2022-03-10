@@ -9,8 +9,9 @@ class Site
         require_once __DIR__ .'/../Views/home.php';
     }
 
-    public function galeria()
-    {
+    public function galeria($foto)
+    {   
+        $photo = $foto;
         require_once __DIR__ .'/../Views/galeria.php';
     }
 }
