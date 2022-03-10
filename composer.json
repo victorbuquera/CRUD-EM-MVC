@@ -1,0 +1,22 @@
+{
+    "name": "estagio/cursomvc",
+    "description": "Curso mvc",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/",
+            "core\\":"core/"
+        },
+        "files": ["config/config.php"]
+    },
+    "authors": [
+        {
+            "name": "Victor Buquera",
+            "email": "victorbuquera@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php":">=7.2" 
+    }
+}
