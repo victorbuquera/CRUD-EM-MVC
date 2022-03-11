@@ -33,6 +33,19 @@ class Crud extends Connection
 
     public function update()
     {
+        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $conn = $this->connect();
+        $sql = "UPDATE tb_person SET nome = :nome, email = :email WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':id', $id);
+
+        $stmt->execute();
+        return $stmt;
 
     }
     
@@ -42,8 +55,8 @@ class Crud extends Connection
     }
 
     public function editForm()
-    {
-        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+    {         //Decodifica o ID 
+        $id = base64_decode(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS) );
 
         $conn = $this->connect();
         $sql = "select * from tb_person where id = :id";

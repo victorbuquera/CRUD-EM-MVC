@@ -5,11 +5,30 @@
     </div>       
 
     <div class="col s12">
-        <?php foreach ($editarForm as $registro): ?>
+        <form action="?router=Site/alterar/" method="POST">
+            <?php foreach ($editarForm as $registro): ?>
+                <input type="hidden" name="id" value="<?php echo $registro['id']?>">
+                <div class="col s12">
+                <div class="input-field col s12 m6">
+                    <input type="text" name="nome" id="nome" value="<?php echo $registro['nome']?>" required>
+                    <label for="nome">Nome</label>
+                </div>
+                
+                <div class="input-field col s12 m6">
+                    <input type="email" name="email" id="email" value="<?php echo $registro['email']?>" required>
+                    <label for="email">Email</label>
+                </div>
 
+                <div class="input-field col s12">
+                <input type="submit" value="Enviar" class="btn-small blue">
+                <input type="reset" value="resetar" class="btn-small red">
 
-            
-        <?php endforeach; ?>
+                </div>
+                
+            <?php endforeach; ?>
+        </form>
+    </div>
+
     </div>
 
 

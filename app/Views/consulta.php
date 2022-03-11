@@ -17,10 +17,13 @@
         <?php foreach($consulta as $registro): ?>
         <tr>
                 <td><?php echo $registro['nome'] ?></td>
-                <td><?php echo $registro['email'] ?></td>
-                <td><a class="waves-effect waves-light btn blue darken-3" href="?router=Site/editar/&id=<?php echo $registro['id'] ?>">Editar</a> 
-                <td><a class="waves-effect waves-light btn red darken-3"href="?router=Site/deletar/&id=<?php echo $registro['id'] ?>">Deletar</a>
-            </td>
+                <td><?php echo $registro['email'] ?></td>                                                        <!--criptografa o ID-->  
+                <td>
+                    <a class="waves-effect waves-light btn blue darken-3" href="?router=Site/editar/&id=<?php 
+                        echo base64_encode($registro['id'])?>">Editar</a> 
+                    <a class="waves-effect waves-light btn red darken-3"href="?router=Site/deletar/&id=<?php 
+                        echo base64_encode( $registro['id']) ?>">Deletar</a>
+                </td>
         </tr>    
         <?php endforeach; ?> 
         </tbody>

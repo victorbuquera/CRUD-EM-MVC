@@ -27,4 +27,10 @@ class Site extends Crud
         require_once __DIR__ .'/../Views/editar.php';
     }
 
+    public function alterar()
+    {
+        $alterar = $this->update();
+        header("Location:?router=Site/consulta/");
+    }
+
 }
