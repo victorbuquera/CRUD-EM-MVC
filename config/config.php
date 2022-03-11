@@ -10,7 +10,17 @@
 </head>
 <body>
     
-    <nav></nav>
+    <nav class="blue-grey darken-3">
+        <div class="nav-wrapper container">
+            <a href="?router=Site/home/" class="brand-logo light">Curso mvc</a>
+            <ul class="right">
+                <li><a href="?router=Site/cadastro/">Cadastro</a></li>
+                <li><a href="?router=Site/consulta/">Consulta</a></li>
+
+            </ul>
+        </div>
+
+    </nav>
 
     <script src="config/materialize/js/materialize.min.js"></script>
 </body>
