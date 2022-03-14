@@ -5,7 +5,7 @@ namespace core;
 class Router
 {
     private $controller = 'Site';
-    private $method = 'home';
+    private $method = 'consulta'; //Define qual vai ser a primeira página a ser exíbida.
     private $param = [];
 
     public function __construct()

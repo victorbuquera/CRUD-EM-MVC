@@ -33,4 +33,16 @@ class Site extends Crud
         header("Location:?router=Site/consulta/");
     }
 
+    public function confirmaDelete()
+    {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        require_once __DIR__ .'/../views/confirmaDelete.php';
+    }
+
+    public function deletar()
+    {
+        $deletar = $this->delete();
+        header("Location:?router=Site/consulta/");
+    }
+
 }

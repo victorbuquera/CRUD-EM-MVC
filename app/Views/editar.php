@@ -21,7 +21,6 @@
 
                 <div class="input-field col s12">
                 <input type="submit" value="Enviar" class="btn-small blue">
-                <input type="reset" value="resetar" class="btn-small red">
 
                 </div>
                 

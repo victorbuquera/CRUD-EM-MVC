@@ -21,7 +21,7 @@
                 <td>
                     <a class="waves-effect waves-light btn blue darken-3" href="?router=Site/editar/&id=<?php 
                         echo base64_encode($registro['id'])?>">Editar</a> 
-                    <a class="waves-effect waves-light btn red darken-3"href="?router=Site/deletar/&id=<?php 
+                    <a class="waves-effect waves-light btn red darken-3"href="?router=Site/confirmaDelete/&id=<?php 
                         echo base64_encode( $registro['id']) ?>">Deletar</a>
                 </td>
         </tr>    
